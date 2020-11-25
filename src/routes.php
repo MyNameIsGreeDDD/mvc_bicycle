@@ -9,4 +9,9 @@ return [
     '~^users/(\d+)/activate/(.+)$~' => [\MyProject\Controllers\UsersController::class, 'activateCode'],
     '~^users/login~' => [\MyProject\Controllers\UsersController::class, 'login'],
     '~^users/exit~' => [\MyProject\Controllers\UsersController::class, 'exit'],
+    '~^articles/(\d+)/addComment$~' => [\MyProject\Controllers\CommentsController::class, 'addComment'],
+    '~^articles/(\d+)/deleteComment/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'deleteComment'],
+    '~^articles/(\d+)/editComments/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'editComments'],
+
+
 ];
