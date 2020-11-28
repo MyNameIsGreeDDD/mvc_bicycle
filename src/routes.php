@@ -11,6 +11,7 @@ return [
     '~^users/exit~' => [\MyProject\Controllers\UsersController::class, 'exit'],
     '~^articles/(\d+)/addComment$~' => [\MyProject\Controllers\CommentsController::class, 'addComment'],
     '~^articles/(\d+)/deleteComment/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'deleteComment'],
+    '~^articles/(\d+)/editComment/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'editComment'],
     '~^articles/(\d+)/editComments/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'editComments'],
 
 

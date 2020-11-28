@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56a0bae4-4871-49f0-8e14-74bd79269876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/comments/editComments.php" afterDir="false" />
+    <list default="true" id="56a0bae4-4871-49f0-8e14-74bd79269876" name="Default Changelist" comment="Добавлены функции удаления и редактирования комментариев">
+      <change afterPath="$PROJECT_DIR$/www/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyProject/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyProject/Controllers/CommentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyProject/Models/Comments/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyProject/Models/Comments/Comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/styles.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git_repository" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -115,7 +115,11 @@
       <workItem from="1606151595191" duration="2813000" />
       <workItem from="1606246663632" duration="2835000" />
       <workItem from="1606286259506" duration="2616000" />
-      <workItem from="1606321696479" duration="537000" />
+      <workItem from="1606321696479" duration="2837000" />
+      <workItem from="1606418317523" duration="1079000" />
+      <workItem from="1606500847607" duration="781000" />
+      <workItem from="1606586578776" duration="855000" />
+      <workItem from="1606587522089" duration="336000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлено отображение комментариев">
       <created>1606066456274</created>
@@ -124,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606066456274</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлены функции удаления и редактирования комментариев">
+      <created>1606322288480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606322288480</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +143,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлено отображение комментариев" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено отображение комментариев" />
+    <MESSAGE value="Добавлены функции удаления и редактирования комментариев" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены функции удаления и редактирования комментариев" />
   </component>
   <component name="WindowStateProjectService">
     <state x="581" y="329" width="840" height="633" key="#CLI_Interpreters" timestamp="1605445712127">
@@ -167,17 +179,19 @@
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state x="643" y="362" width="606" height="355" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.1857.1080@0.0.1857.1080" timestamp="1605432769022" />
-    <state x="554" y="117" key="CommitChangelistDialog2" timestamp="1606066455483">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state x="553" y="117" key="CommitChangelistDialog2" timestamp="1606587804985">
+      <screen x="0" y="0" width="1854" height="1080" />
     </state>
-    <state x="554" y="117" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1606066455483" />
+    <state x="553" y="117" key="CommitChangelistDialog2/0.0.1854.1080@0.0.1854.1080" timestamp="1606587804985" />
+    <state x="554" y="117" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1606322287596" />
     <state width="597" height="466" key="DebuggerActiveHint" timestamp="1606153215966">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state width="597" height="466" key="DebuggerActiveHint/0.0.1858.1080@0.0.1858.1080" timestamp="1606153215966" />
-    <state x="664" y="348" width="439" height="491" key="FileChooserDialogImpl" timestamp="1606066400626">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state x="663" y="348" width="439" height="491" key="FileChooserDialogImpl" timestamp="1606587758369">
+      <screen x="0" y="0" width="1854" height="1080" />
     </state>
+    <state x="663" y="348" key="FileChooserDialogImpl/0.0.1854.1080@0.0.1854.1080" timestamp="1606587758369" />
     <state x="664" y="348" width="439" height="491" key="FileChooserDialogImpl/0.0.1857.1080@0.0.1857.1080" timestamp="1605445709418" />
     <state x="664" y="348" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1606066400626" />
     <state width="1815" height="293" key="GridCell.Tab.0.bottom" timestamp="1606288900213">
@@ -256,10 +270,11 @@
     <state x="760" y="463" key="NewPhpFileDialog/0.0.1851.1080@0.0.1851.1080" timestamp="1604075646589" />
     <state x="763" y="463" key="NewPhpFileDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1605555399413" />
     <state x="763" y="463" key="NewPhpFileDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1606286333932" />
-    <state x="428" y="185" key="SettingsEditor" timestamp="1606065992560">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state x="416" y="207" key="SettingsEditor" timestamp="1606587406456">
+      <screen x="0" y="0" width="1854" height="1080" />
     </state>
     <state x="426" y="185" key="SettingsEditor/0.0.1851.1080@0.0.1851.1080" timestamp="1604071101767" />
+    <state x="416" y="207" key="SettingsEditor/0.0.1854.1080@0.0.1854.1080" timestamp="1606587406456" />
     <state x="429" y="185" key="SettingsEditor/0.0.1857.1080@0.0.1857.1080" timestamp="1605445713646" />
     <state x="428" y="185" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1606065992560" />
     <state x="521" y="273" key="Vcs.Push.Dialog.v2" timestamp="1606066555695">
@@ -285,6 +300,10 @@
     </state>
     <state x="738" y="315" width="792" height="356" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1605373648700" />
     <state x="953" y="269" width="486" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1606061775878" />
+    <state x="222" y="183" width="1185" height="689" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606587475337">
+      <screen x="0" y="0" width="1854" height="1080" />
+    </state>
+    <state x="222" y="183" width="1185" height="689" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1854.1080@0.0.1854.1080" timestamp="1606587475337" />
     <state x="746" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606066560115">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -323,24 +342,6 @@
           <url>file://$PROJECT_DIR$/templates/comments/editComments.php</url>
           <line>5</line>
           <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/src/MyProject/Controllers/CommentsController.php</url>
-          <line>15</line>
-          <properties>
-            <option name="className" value="\MyProject\Controllers\CommentsController" />
-            <option name="methodName" value="addComment" />
-          </properties>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/src/MyProject/Controllers/CommentsController.php</url>
-          <line>71</line>
-          <properties>
-            <option name="className" value="\MyProject\Controllers\CommentsController" />
-            <option name="methodName" value="editComments" />
-          </properties>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -30,7 +30,11 @@ class CommentsController extends AbstractController
 
     public function deleteComment($articleId, $commentId): void
     {
+
         $comment = Comments::getById($commentId);
+        if (!$comment) {
+            header('Location: /articles/' . $articleId, true, 302);
+        }
         $comment->delete();
         header('Location: /articles/' . $articleId, true, 302);
     }
@@ -40,9 +44,11 @@ class CommentsController extends AbstractController
         $comment = Comments::getById($commentId);
         $article = Article::getById($articleId);
         $comments = Comments::getAttribute(Comments::getAttributeNameArticleId(), $articleId);
+
         if ($comment === null) {
             throw new NotFoundException();
         }
+
         try {
             if ($this->user->isAdmin() === false) {
                 throw new ForbiddenException('Не администраторам редактировать комментарии запрещено');
@@ -65,6 +71,7 @@ class CommentsController extends AbstractController
             header('Location: /articles/' . $comment->getArticleId(), true, 302);
             exit;
         }
+
         $this->view->renderHtml('comments/editComments.php', ['comment' => $comment,
             'article' => $article]);
     }
