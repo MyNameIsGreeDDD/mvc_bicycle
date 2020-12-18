@@ -2,7 +2,7 @@
 return [
     'db' => [
         'host' => 'localhost',
-        'dbname' => 'table_for_lessons',
+        'dbname' => 'tables_for_project',
         'user' => 'root',
         'password' => 'root',
     ]

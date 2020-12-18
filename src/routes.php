@@ -13,6 +13,8 @@ return [
     '~^articles/(\d+)/deleteComment/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'deleteComment'],
     '~^articles/(\d+)/editComment/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'editComment'],
     '~^articles/(\d+)/editComments/(\d+)$~' => [\MyProject\Controllers\CommentsController::class, 'editComments'],
+    '~^personalArea$~' => [\MyProject\Controllers\PersonalAreaController::class, 'view'],
+    '~^personalArea/downloadImage$~' => [\MyProject\Controllers\FilesController::class, 'downloadImage'],
 
 
 ];
