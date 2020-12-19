@@ -19,7 +19,7 @@ class CommentsController extends AbstractController
             Comments::createComment($_POST, $this->user, $articleId);
         } catch (InvalidArgumentException $e) {
             $article = Article::getById($articleId);
-            $comments = Comments::getAttribute(Comments::getAttributeNameArticleId(), $articleId);
+            $comments = Comments::getAllByAttribute(Comments::getAttributeNameArticleId(), $articleId);
             $this->view->renderHtml('articles/view.php', ['article' => $article, 'comments' => $comments,
                 'error' => $e->getMessage()]);
             return;
@@ -43,7 +43,7 @@ class CommentsController extends AbstractController
     {
         $comment = Comments::getById($commentId);
         $article = Article::getById($articleId);
-        $comments = Comments::getAttribute(Comments::getAttributeNameArticleId(), $articleId);
+        $comments = Comments::getAllByAttribute(Comments::getAttributeNameArticleId(), $articleId);
 
         if ($comment === null) {
             throw new NotFoundException();
@@ -80,7 +80,7 @@ class CommentsController extends AbstractController
     {
         $comment = Comments::getById($commentId);
         $article = Article::getById($articleId);
-        $comments = Comments::getAttribute(Comments::getAttributeNameArticleId(), $articleId);
+        $comments = Comments::getAllByAttribute(Comments::getAttributeNameArticleId(), $articleId);
 
         $this->view->renderHtml('comments/editComments.php', ['comments' => $comments, 'article' => $article,
             'commentId' => $commentId

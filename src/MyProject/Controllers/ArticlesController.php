@@ -7,6 +7,7 @@ use MyProject\Exceptions\InvalidArgumentException;
 use MyProject\Exceptions\NotFoundException;
 use MyProject\Models\Articles\Article;
 use MyProject\Models\Comments\Comments;
+use MyProject\Models\Images\Images;
 use MyProject\Models\Users\User;
 use MyProject\Services\Db;
 use MyProject\View\View;
@@ -18,14 +19,15 @@ class ArticlesController extends AbstractController
     public function view(int $articleId): void
     {
         $article = Article::getById($articleId);
-        $comments = Comments::getAttribute(Comments::getAttributeNameArticleId(), $articleId);
+        $comments = Comments::getAllByAttribute(Comments::getAttributeNameArticleId(), $articleId);
+        $avatars = Images::findAll();
 
         if ($article === null) {
             throw new NotFoundException();
         }
 
         $this->view->renderHtml('articles/view.php', [
-            'article' => $article, 'comments' => $comments
+            'article' => $article, 'comments' => $comments, 'avatars' => $avatars
         ]);
     }
 

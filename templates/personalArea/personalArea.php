@@ -5,6 +5,10 @@
                 зона информации об аккаунте
             </td>
             <td>
+                <?php if ($avatar !== null): ?>
+                    <img src="<?= $avatar->getImagePath() ?>" width="150" height="150"
+                         alt="Вы можете установить аватар">
+                <?php endif ?>
                 <?php if (!empty($error)): ?>
                     <div style="color: red;"><?= $error ?></div>
                 <?php endif; ?>

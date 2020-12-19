@@ -26,13 +26,22 @@ abstract class ActiveRecordEntity
         return $entities ? $entities[0] : null;
     }
 
-    public static function getAttribute(string $attribute, $value): array
+    public static function getAllByAttribute(string $attribute, $value): array
     {
         $db = Db::getInstance();
         $entities = $db->query('SELECT * FROM ' . static::getTableName() . ' where ' . $attribute . '= :' . $attribute,
             [':' . $attribute => $value], static::class
         );
         return $entities;
+    }
+
+    public static function getOneByAttribute(string $attribute, $value): ?self
+    {
+        $db = Db::getInstance();
+        $entities = $db->query('SELECT * FROM ' . static::getTableName() . ' where ' . $attribute . '= :' . $attribute,
+            [':' . $attribute => $value], static::class
+        );
+        return $entities ? $entities[0] : null;
     }
 
     public function __set(string $name, $value)

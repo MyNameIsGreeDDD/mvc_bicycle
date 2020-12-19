@@ -17,6 +17,12 @@
     <?php endif ?>
 <?php endif ?>
 <?php foreach ($comments as $comment): ?>
+    <?php foreach ($avatars as $avatar) : ?>
+        <?php if ($avatar->getUserId() === $comment->getAuthorId()): ?>
+            <img src="<?= '/../'.$avatar->getImagePath() ?>" width="150" height="150"
+                 alt="123">
+        <?php endif ?>
+    <?php endforeach ?>
     <p><?= $comment->getAuthor($comment->getAuthorId())->getNickname() ?></p>
     <p><?= $comment->getText() ?></p>
     <?php if ($user->isAdmin() === true) : ?>

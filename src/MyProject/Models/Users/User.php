@@ -46,6 +46,11 @@ class User extends ActiveRecordEntity
 
     }
 
+    public static function getTableName(): string
+    {
+        return 'users';
+    }
+
     public function isConfirmed(): bool
     {
         return (bool)$this->isConfirmed;
@@ -70,12 +75,6 @@ class User extends ActiveRecordEntity
     {
         return $this->authToken;
     }
-
-    protected static function getTableName(): string
-    {
-        return 'users';
-    }
-
     public static function signUp(array $userData)
     {
         if (empty($userData['nickname'])) {

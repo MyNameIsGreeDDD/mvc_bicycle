@@ -4,6 +4,7 @@
 namespace MyProject\Controllers;
 
 use MyProject\Exceptions\DownloadException;
+use MyProject\Exceptions\ForbiddenException;
 use MyProject\Exceptions\NotFoundException;
 use MyProject\Models\Images\Images;
 use MyProject\View\View;
@@ -24,7 +25,22 @@ class FilesController extends AbstractController
 
 
         $image = $_FILES['image'];
-        $newFilePath = __DIR__ . '/../../../usersImages/' . $image['name'] = $this->user->getId() . '.png';
+
+        $extension = pathinfo($image['name'], PATHINFO_EXTENSION);
+        $allowedExtensions = ['jpg', 'png', 'gif'];
+
+        try {
+            if (!in_array($extension, $allowedExtensions)) {
+                throw new ForbiddenException('Загрузка файла такого типа запрещена.Разрешенные типы файлов:
+                .jpg, .png, .gif');
+            }
+        } catch (ForbiddenException $e) {
+            $this->view->renderHtml('personalArea/personalArea.php', ['error' => $e->getMessage()]);
+            return;
+        }
+
+        $userId = $this->user->getId();
+        $newFilePath = 'usersImages/' . $image['name'] = $userId . '.' . $extension;
 
         try {
             if (!move_uploaded_file($image['tmp_name'], $newFilePath)) {
@@ -34,10 +50,16 @@ class FilesController extends AbstractController
             $this->view->renderHtml('personalArea/personalArea.php', ['error' => $e->getMessage()]);
             return;
         }
-        Images::addImage($newFilePath, $this->user->getId());
+
+        $checkAvatar = Images::checkAvatar($newFilePath, $userId);
+
+        if ($checkAvatar === true) {
+            $avatar = Images::getOneByAttribute(Images::getAttributeNameUserId(), $userId);
+            $avatar->delete();
+        }
+        Images::addImage($newFilePath, $userId);
+
         header('Location:/personalArea');
         exit;
-
-
     }
 }
